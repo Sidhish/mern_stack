@@ -1,0 +1,74 @@
+React is a java script library used for building UI especially for single page website 
+React don't have: 
+                1.its own routing facility(navigating)
+                2.its own state management tool (data retraining from one page to other)
+                3.its own build method
+React js is a open sourced library managed by Facebook (meta)
+It is a single page website because it only have a single html file(index.html) which handles every thing
+Components based approach 
+Reusability
+Declare your part -> Rest is handled by ReactJs
+Little optimized and fast (single page)
+Virtual DOM
+External Library accessibility
+
+Angular
+It is a FrameWork
+It has routing facility, state management, own building methods
+managed by Google
+
+
+DOM and Virtual DOM
+
+
+🧠 React vs Angular – Comparison Notes
+🔷 React
+✅ Type: JavaScript Library
+
+✅ Purpose: Used for building User Interfaces, especially Single Page Applications (SPA).
+
+✅ Maintained By: Meta (Facebook)
+
+✅ Routing: ❌ Does not have built-in routing.
+➤ Requires external libraries like React Router.
+
+✅ State Management: ❌ Does not have a built-in state management tool.
+➤ Use tools like Redux, Context API, Recoil, etc.
+
+✅ Build Tools: ❌ No native build system.
+➤ Use tools like Vite, Webpack, or Create React App (CRA).
+
+✅ Flexibility: Highly flexible – you can choose your own routing, state management, etc.
+
+✅ Component-Based: Everything is built using reusable components.
+
+✅ Learning Curve: Easier to get started with (especially for beginners).
+
+🔶 Angular
+✅ Type: Complete JavaScript Framework
+
+✅ Purpose: Used for building complex, large-scale web applications.
+
+✅ Maintained By: Google
+
+✅ Routing: ✅ Has a built-in Router module.
+
+✅ State Management: ✅ Can handle state using RxJS, NgRx, or Angular services.
+
+✅ Build Tools: ✅ Comes with its own CLI (Command Line Interface) for scaffolding, building, and testing.
+
+✅ Structure: Offers strict structure and patterns (MVC).
+
+✅ All-in-One: Comes with everything out-of-the-box (routing, HTTP, forms, etc.)
+
+✅ Learning Curve: Steeper due to its size and complexity.
+
+🆚 Quick Comparison Table
+Feature	React	Angular
+Type	Library	Framework
+Maintained by	Meta (Facebook)	Google
+Routing	External (React Router)	Built-in
+State Management	External (Redux, Context API)	Built-in (RxJS, Services)
+Build Tool	External (Vite, Webpack)	Built-in (Angular CLI)
+Architecture	Flexible, Component-based	Structured (MVC-based)
+Learning Curve	Easier	Steeper
