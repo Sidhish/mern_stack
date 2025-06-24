@@ -210,3 +210,8 @@ login()
       .catch(() => console.error("Cart Items add failed!"));
   })
   .catch(() => console.error("user Login failed!"));
+
+  //NOTE - async/await
+  function userBehaviour(){
+    console.log()
+  }

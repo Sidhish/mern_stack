@@ -1,0 +1,105 @@
+<!-- ## GIT commands:
+
+1.git —version(it shows wheather the git is installed or not )
+
+2.git config —list(give the details of username and email)
+
+3.git init(initializing the project with the help of git)
+
+4.git status(give the idea about the status of file - unstaged(git has no track about it) -staged(git has track of it ) -commited(git has locally created a version)
+
+5.git add file_name(add a specific file into the staging area from unstaged area)
+
+6.git add .(add all files into the staging area)
+
+ 7.git commit -m “message” (commit the message)
+
+8.git remote add origin originname(pastelink) (connects the github with the project file in vs code)
+
+9.git remote -v(**list all remote repositories** connected to your local Git repository)
+
+10.git branch -M branchname(create a branch locally)
+
+11.git branch(shows the created branch)
+
+12.git push -u origin branchname( push the files to github)
+
+13.git clone link(if we want to clone the file from git to local computer)
+
+14.git log(will give you an idea of the commit message and who is the author)
+
+15.git log —oneline(ommit history — each commit on a single line.)
+
+16.git pull origin branchname( it **fetches** and **merges** changes from a remote branch (`branchname`) on the remote repository (`origin`) **into your current local branch**.)
+
+17.git checkout -b master(it creates new branch without changing older one)
+
+18.git checkout branchname (switching the branch)
+19.dgit reset —hard 9307**(changes the head ) -->
+
+//chat gpt
+
+ GIT COMMANDS WITH DEFINITIONS
+git --version
+👉 Displays the installed version of Git to verify that it is installed.
+
+git config --list
+👉 Shows the Git configuration including user name, email, and other settings.
+
+git init
+👉 Initializes a new Git repository in the current directory.
+
+git status
+👉 Shows the status of files:
+
+Untracked – Git is not tracking the file.
+
+Staged – File is added to staging area.
+
+Committed – File changes are saved in the local repository.
+
+git add <file_name>
+👉 Adds a specific file to the staging area.
+
+git add .
+👉 Adds all modified and new files in the current directory to the staging area.
+
+git commit -m "your message"
+👉 Commits the staged changes with a message describing what was changed.
+
+git remote add origin <repository_URL>
+👉 Links your local Git repo to a remote GitHub repository named origin.
+
+git remote -v
+👉 Lists all remote repositories linked to your project.
+
+git branch -M <branch_name>
+👉 Creates a new branch or renames the current branch to <branch_name>.
+
+git branch
+👉 Lists all branches in the current repository and highlights the current branch.
+
+git push -u origin <branch_name>
+👉 Pushes the local branch to the remote origin and sets upstream tracking.
+
+git clone <repository_URL>
+👉 Clones a repository from GitHub (or any remote) to your local machine.
+
+git log
+👉 Shows the full commit history with details like author, date, and commit message.
+
+git log --oneline
+👉 Shows the commit history in a compact one-line format per commit.
+
+git pull origin <branch_name>
+👉 Fetches changes from the remote branch and merges them into your local branch.
+
+git checkout -b <new_branch>
+👉 Creates and switches to a new branch.
+
+git checkout <branch_name>
+👉 Switches to an existing branch.
+
+git reset --hard <commit_hash>
+👉 Resets your current branch to a specific commit.
+❗ All changes after that commit will be permanently lost (hard reset).

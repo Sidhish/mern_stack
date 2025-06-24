@@ -198,18 +198,18 @@ typeof
 
 */
 
-let a = 3;
-let b = "3";
+// let a = 3;
+// let b = "3";
 
-console.log(a == b);
-console.log(a === b);
+// console.log(a == b);
+// console.log(a === b);
 
-console.log((a += 3)); //a = a+3
+// console.log((a += 3)); //a = a+3
 
-console.log(a > 3 ? "Hello" : "Hi");
+// console.log(a > 3 ? "Hello" : "Hi");
 
-a = null;
+// a = null;
 
-console.log(a ?? "hello");
+// console.log(a ?? "hello");
 
-console.log(typeof b);
+// console.log(typeof b);
