@@ -190,3 +190,164 @@
 // console.log(prices);//offer output is [225, 580.5, 270, 810, 45]
 
 //ARRAY methods
+//Push() : add to end
+//pop() : delete from end and return
+//toString() : converts array to string
+//Concat() : joins miltiple arrays adn return result
+//unshift() : add to start
+//shift() : delete from start and return 
+//slice() : returns a pieceof the array (slice(startidx , endidx))
+//splice() : change original array(add,remove,replace)
+//splice(strtIdx,delCount,newE)
+
+// let foodItems = ["potato","apple","grapes","tomato"];
+// let numbers = ["90","92","93"];
+// console.log(foodItems);
+// foodItems.push("litchi","panner");
+// console.log(foodItems);
+// let deleted = foodItems.pop();
+// console.log(foodItems);
+// console.log(deleted);
+// console.log(foodItems.toString());
+// console.log(numbers.toString());
+// console.log(foodItems.concat(numbers));
+// foodItems.unshift("meat")
+// console.log(foodItems);
+// foodItems.shift()
+// console.log(foodItems);
+// console.log(foodItems.slice(0,3));
+
+// //splice
+// let arr = [1,2,3,4,5,6,7];
+// let arr1 = [1,2,3,4,5,6,7];
+// console.log(arr);
+// arr.splice(2,2,143,144);//deleting and adding elemetns 
+// console.log(arr);
+// arr1.splice(2,0,103)//adding elements withput deleting
+// console.log(arr1);
+// arr1.splice(3,1)//delete element 
+// console.log(arr1);
+// arr1.splice(3,1,101);
+// console.log(arr1);
+
+
+//practice question
+//create an array to store companies -> "Bloomberg","Microsoft","Uber","Google","IBM","Netflix"]
+//1.Remove the first company from the array
+//2.Remove Uber and Add ola in its place
+//3.Add amazon at the end
+
+// let arr = ["Bloomberg","Microsoft","Uber","Google","IBM","Netflix"];
+// console.log(arr);
+// arr.shift();
+// console.log(arr);
+// arr.unshift("Bloomberg");
+// console.log(arr);
+// arr.splice(2,1,"Ola");
+// console.log(arr);
+// arr.push("Amazon");
+// console.log(arr);
+
+//FUNCTIONS 
+//Block of code that perfroms a specific task, cam be invoked(called) whenever needed
+// parameters in function are like local variable which are of block scope
+
+// function myFunction(){
+//     console.log("Hii");
+//     console.log("This is sidhish");
+// }
+// myFunction();
+
+// function myFunction(msg){
+//     //parameter -> input
+//     console.log(msg);
+// }
+// myFunction("Hii, good to see you"); //argument 
+
+//ARROW Functions(=>) 
+//comapt way of writing a function
+/* const functionName = (parameter1,parameter2..)=>{
+     //do some work
+}*/
+
+// const arrowSum = (a,b) => {
+//     console.log(a+b);
+// }
+// console.log(arrowSum(2,3));
+
+//Practice question
+//create a function using the "function" keyword that tajes a string as an argument
+//and return the number of vowels in the string.
+// create a arrow function to create the same task
+
+// function fnString(str){ 
+//     let count  = 0;
+//     for(let i=0;i<=str.length;i++){
+//         if(str[i] == "a" || str[i] == "e" || str[i]=="i" || str[i]=="o" || str[i]=="u"){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// console.log(fnString("aaaa"));
+
+// const countVowels = (str) => {
+//     let count  = 0;
+//     for(let i=0;i<=str.length;i++){
+//         if(str[i] == "a" || str[i] == "e" || str[i]=="i" || str[i]=="o" || str[i]=="u"){
+//             count++;
+//         }
+//     }
+//     return count;
+// } 
+// console.log(countVowels("aeioua"));
+
+//ForEach loop in arrays
+//arr.forEach(callBackFunction)
+//callBackFunction : Here it is a function to execute for each element in an array
+//A callback is a function passed as an argument to another function
+/* arr.forEach((val) =>{
+    console.log(val)    
+}) */
+
+// let arr = [1,2,3,4,5,6];
+// arr.forEach((val) => {
+//     console.log(val);
+// });
+
+// let arr = ["andhra","pune","delhi","mumbai"];
+// arr.forEach((val,idx,arr) =>{
+//     console.log(val.toUpperCase(),idx,arr);
+// });
+
+//What is Higher Order Funtions/Methos 
+//it is using a function as a parameter or retuning the function as a value 
+//  What is a Higher-Order Function?
+// A Higher-Order Function (HOF) is a function that does at least one of the following:
+
+// Takes another function as an argument
+
+// Returns a function as its result
+// A function that operates on other functions (by taking them as arguments or returning them) is called a Higher-Order Function.
+
+//Practice Question
+//For a given array of numbers, print the square of each value using the forEach loop
+// let arr = [1,2,3,4,5];
+// arr.forEach((val) =>{
+//     console.log(val*val);
+// });
+//Both are same methods
+// let arr = [1,2,3,4,5];
+// let calSquare = (val) => {
+//     console.log(val*val);
+// };
+// arr.forEach(calSquare);
+
+//Some more Array methods
+//map 
+//creates a new array with the result of some operation. the value its callback
+//returns are used to form new array
+//arr.map(callbackfnx(val,idx,arr)) 
+/* let newArr = arr.map((val) =>{
+    return val*2;
+}); */
