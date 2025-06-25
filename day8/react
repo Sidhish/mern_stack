@@ -1,0 +1,242 @@
+What is React?
+It is an open source javascript library for building user interfaces.
+Key Points from definition:
+It is a Javascript library not Framework.
+Why?
+It does not include routing, state management, or build tooling by default.
+
+It gives you flexibility to pick your own tools (like Redux, React Router, etc.)
+
+Compare this to Angular (which is a full framework with batteries included).
+
+It is used for building user interfaces.
+Why learn React?
+Popularity
+It is created and maintained by Facebook
+It has more than 200k stars on Github.
+It has Huge Community
+Based on the stackoverflow developer survey 2024, React is a popular choice of 39.5% developers. 
+Technically
+Component Based Architecture
+UI as a Collection of Components
+Reusability reduces Repetition
+Easier debugging and Testing
+React is Declarative
+Tell React what you want and React will build the actual UI
+React will handle efficiently updating and rendering if the components
+DOM updates are handled gracefully in React.
+Prerequisites
+HTML, CSS and Javascript fundamentals 
+Virtual DOM?
+Why Virtual DOM?
+As web applications become more complex, managing updates to the user interface becomes a challenging task. This is where the Virtual DOM (Document Object Model) comes into play – particularly in React, the leading JavaScript library for building user interfaces.
+
+What is Virtual DOM?
+The virtual DOM is a lightweight copy of the real DOM that allows React to manage changes more efficiently by minimizing the direct manipulation required on the real DOM.
+
+How does Virtual DOM work?
+The virtual DOM is an in-memory representation of the real DOM elements. Instead of interacting directly with the real DOM, which can be slow and costly in terms of performance, React creates a virtual representation of the UI components. This virtual representation is a lightweight JavaScript object that mirrors the structure of the real DOM.
+
+Step by Step process of how the virtual DOM works:
+
+Step 1 – Initial Rendering: when the app starts, the entire UI is represented as a Virtual DOM. React elements are created and rendered into the virtual structure.
+
+Step 2 – State and Props Changes: as the states and props change in the app, React re-renders the affected components in the virtual DOM. These changes do not immediately impact the real DOM.
+
+Step 3 – Comparison Using Diff Algorithm: React then uses a diffing algorithm to compare the current version of the Virtual DOM with the previous version. This process identifies the differences (or "diffs") between the two versions.
+
+Step 4 – Reconciliation Process: based on the differences identified, React determines the most efficient way to update the real DOM. Only the parts of the real DOM that need to be updated are changed, rather than re-rendering the entire UI. This selective updating is quick and performant.
+
+Step 5 – Update to the Real DOM: finally, React applies the necessary changes to the real DOM. This might involve adding, removing, or updating elements based on the differences detected in step 3.
+NPM Packages
+npm (Node Package Manager) is like an app store for JavaScript packages — it provides reusable code written by other developers that you can use in your project instead of building everything from scratch.
+In React, npm packages help you:
+Add extra features (like routing, animations, charts)
+Speed up development
+Use well-tested solutions
+
+Create First React App
+We use a tool called Create React App (CRA) to quickly set up a React project with all the necessary files, configuration, and dependencies - without manually doing it all.
+
+Prerequisites:
+Node.js installed (check node -v)
+Npm installed (check npm -v)
+
+Create React App Commands:
+With npx:
+npx create-react-app APP_NAME
+
+npx: It is a npm package runner
+With npm:
+	npm i create-react-app -g //install the package globally
+	
+	create react-app APP_NAME // Creates a react application
+
+Run React App Command:
+Go to your react-app-folder
+Run npm start.
+It will start the app on http://localhost:3000/
+React App Folder Structure
+
+
+package.json: This file contains the dependencies and the scripts required to run the project.
+Dependencies:
+
+Scripts:
+
+package-lock.json: This file simply ensures the consistent installation of your app dependencies and its sub-dependencies.
+	It contains:
+Exact version of each dependency and sub-dependency
+Resolved URLs where the packages were downloaded from
+Integrity checks (to ensure security)
+	Example:
+	// package.json
+"dependencies": {
+  "axios": "^1.5.0"
+}
+
+// package-lock.json
+"axios": {
+"version": "1.5.0",
+"resolved":"https://registry.npmjs.org/axios/-/axios-1.5.0.tgz",
+ ...
+    	 }
+
+node_modules: This is the folder in which all the dependencies are installed required for the application to run. It is generated when you run the create-react-app command or npm install.
+public folder:
+This directory houses static assets that are served directly by the web server without being processed by tools like Webpack. Key files here include:
+index.html: The index.html is the only html file in your application. We are building single page applications and it is said that the view might dynamically change in the browser but it is this HTML file that gets served up.
+manifest.json: This file is for the progressive web app introduction in react-app.
+robots.txt: This file is for search engine optimization improvement.
+src folder:
+The src folder (short for source) is the heart of your React app.
+It contains all the code you write — components, styles, logic, and more.
+index.js : 
+The entry point of your React app
+React uses this file to render the App component inside the root div of public/index.html.
+//ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+App.js
+The main root component of your app.
+Other components are usually imported and used here.
+You can think of it as your app’s “layout manager”.
+App.css
+It contains classes which are applied in the app component
+App.test.js
+It contains a simple test case which is also called unit testing.
+Index.css
+It contains the styling of body tags 
+serviceWorker.js
+It is concerned with progressive web apps and can be ignored for now.
+ Class 2 ReactJS 
+Components
+ReactJS applications are built around a component-based architecture. A component in React "represents a part of the user interface." This modular approach allows for the breakdown of complex UIs into smaller, manageable, and self-contained pieces.
+
+Key properties of React Components:
+Represent a Part of the UI: Each component describes a specific section or element of the user interface. For example, an application might have components for a "header," "side nav," "main content," and "footer."
+Hierarchical Structure (Nesting): Components can contain other components. A "root component" (often named App component) typically contains all other components, forming a tree-like structure. The source notes, "app component contains the other components."
+Reusability: Components are designed to be reusable. The same component can be employed multiple times, potentially with "different properties to display different information." An example given is a "side nav component" being used for both a left and right side navigation.
+Building Blocks: Components are fundamental to any React application.
+
+Component Code Structure and File Naming
+File Extension: .js and .jsx
+Code Location: The "component code is usually placed in a JavaScript file." For instance, the App component is found in App.js.
+
+Types of React Components
+Stateless Functional Components:
+Description: These are "literally JavaScript functions."
+Functionality: Their main purpose is to "return HTML which describes the UI."
+Example: 
+
+// HelloFunctional.js
+import React from 'react';
+
+function HelloFunctional() {
+  return <h1>Hello, World!</h1>;
+}
+
+export default HelloFunctional;
+
+Key Feature: They do not manage their own internal state (hence "stateless").
+Stateful Class Components:
+Description: These are "regular es6 classes that extend the Component class from the react library."
+Requirement: They "must contain a render method."
+Functionality: The render method "in turn returns HTML."
+Example: 
+
+// HelloClass.js
+import React, { Component } from 'react';
+
+class HelloClass extends Component {
+  render() {
+    return <h1>Hello, World!</h1>;
+  }
+}
+
+export default HelloClass;
+
+Key Feature: They can manage their own internal state (hence "stateful"). The source indicates that the App component in the simple "hello world" example is a class component.
+
+Functional Components
+Functional components are a fundamental building block in ReactJS. They are defined as simple JavaScript functions that are responsible for describing a part of the user interface (UI).
+Definition: "Functional components are just JavaScript functions."
+Inputs: They "can optionally receive an object of properties which is referred to as props."
+Outputs: They "return HTML which describes the UI." The tutorial clarifies that this "HTML is actually something known as JSX, but for the sake of understanding from a beginner's point of view let's just call it HTML."
+Creating a Functional Component: Step-by-Step
+File Structure: Create a new folder (e.g., components) and a new JavaScript file for the component (e.g., Greet.js).
+Naming Convention: For component files, use "Pascal case" (e.g., Greet.js).
+Import React: Every component file must import React.
+import React from 'react';
+Define the Function: Create a JavaScript function that returns the UI.
+Initial Approach:
+function Greet() {
+    		return <h1>Hello LPU</h1>;
+}
+Export the Component: The component must be exported so it can be used in other parts of the application.
+Exporting and Importing Components
+There are two primary ways to export and import components: Default Exports and Named Exports.
+
+Default Exports (Most Common)
+Definition: "This is what allows us to import the component with any name."
+Export Syntax: Prepend export default to the function or variable declaration.
+
+// In Greet.js
+const Greet = () => {
+    return <h1>Hello LPU</h1>;
+};
+export default Greet;
+
+Import Syntax: Import the component without curly braces. The imported name can be different from the exported name.
+
+// In App.js
+import MyComponent from './components/Greet'; // 'MyComponent' can be any name
+// Usage: <MyComponent />
+
+Named Exports
+Definition: "In this situation you have to import the component with the exact same name."
+Export Syntax: Prepend export to the function or variable declaration.
+
+// In Greet.js
+export const Greet = () => { // Note 'export' keyword
+    return <h1>Hello LPU</h1>;
+};
+
+Import Syntax: Import the component using curly braces and the exact same name as it was exported.
+
+// In App.js
+import { Greet } from './components/Greet'; // Must be 'Greet'
+// Usage: <Greet />
+
+Attempting to import a named export as a default export will result in an "Attempted import error."
+Including Components in the Application
+Once a component is created and exported, it needs to be imported into another component (e.g., App.js) to be rendered.
+
+Import:// In App.js
+import Greet from './components/Greet'; // Assuming default export
+// The '.js' extension can be omitted: import Greet from './components/Greet';
+Usage (as a custom HTML tag):// In App.js's return statement
+<div>
+    <Greet></Greet>
+    {/* Or, if no content between tags, use a self-closing tag: */}
+    <Greet />
+</div>
+This process "allows us to include it in the app component." After saving and viewing in the browser, "your first functional component is up and running."
