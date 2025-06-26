@@ -351,3 +351,26 @@
 /* let newArr = arr.map((val) =>{
     return val*2;
 }); */
+
+// DOM part-1
+//The 3 Musketeers of web dev
+//1.HTML(structure)
+//2.CSS(style)cascading style sheet
+//3.JS(logic)
+//Window Object :- it is a global object with lots of properties and methods
+//it is browser's object(not javaScript object) and is automatically created by browser\
+//What is DOM?
+//when a web page is loaded, the browser creates a Document Object model of the page
+//the each and every elements in the html code is accessed in the js code. In that all elements in the html will store in a object named Document
+//And the document object is available in the window object(where we can access teh whole html code)
+// console.dir(window.document);
+//the main use of DOM is to make dynamic changes in our web page
+
+//DOM Manipulation
+//selecting with id
+    //document.getElementById("myId");
+//selecting with class
+    //document.getElementsByClassName("myclass");
+//selecting with tag
+    //document.getElementsByTagName("p");
+    

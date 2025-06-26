@@ -1,0 +1,18 @@
+.heading{
+    background-color: yellow;
+    color: blue;
+}
+body {
+    background-color: antiquewhite;
+}
+h4 {
+    background-color: aqua;
+    color: black;
+}
+p {
+    background-color: bisque;
+}
+button {
+    color: white;
+    background-color: blue;
+}

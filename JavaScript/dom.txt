@@ -1,0 +1,43 @@
+DOM part-1
+The 3 Musketeers of web dev
+1.HTML(structure)
+2.CSS(style)cascading style sheet
+3.JS(logic)
+Window Object :- it is a global object with lots of properties and methods
+it is browser's object(not javaScript object) and is automatically created by browser\
+What is DOM?
+when a web page is loaded, the browser creates a Document Object model of the page
+the each and every elements in the html code is accessed in the js code. In that all elements in the html will store in a object named Document
+And the document object is available in the window object(where we can access teh whole html code)
+console.dir(window.document);
+the main use of DOM is to make dynamic changes in our web page
+
+DOM Manipulation
+selecting with id
+    document.getElementById("myId");
+selecting with class
+    document.getElementsByClassName("myclass");
+selecting with tag
+    document.getElementsByTagName("p");
+//DOM manipulation properties
+1.tagName : returns tag for element nodes
+2.innerText : returns the text content of the element and all its children
+3.innerHTML : returns the plain text or HTML contents in the element
+4.textContent : returns textual content even for hidden elements
+
+QUERY SELECTORS
+document.querySelector("myID / myClass / tag")
+//returns first element
+document.querySelectorAll("myID / myClass / tag);
+//returns a nodeList 
+    
+In query Selectors we have to write class name with (.class)
+example : 
+let allElements = document.querySelectorAll(".class");
+console.dir(allElements); //returns node list (that means it returns all things that have class name "class")
+
+In query selectors for "Id" we have only querySelector beacuse "ID" is a uique one and we write it with ("#id")
+example: 
+let allElements = document.querySelector("#id");
+console.dir(allElements); //returns ID 
+
