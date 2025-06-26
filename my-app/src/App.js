@@ -24,19 +24,34 @@
 
 // export default App;
 
+// import "./App.css";
+// import React from "react";
+
+// import Greet from "./components/Greet";
+
+// function App() {
+//   const name = "Sidhish";
+//   return (
+//     <div className="App">
+//       <Greet studentName={name} college={"Lpu"} branch={"CSE"} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import "./App.css";
 import React from "react";
 
-import Greet from "./components/Greet";
+import Counter from "./components/counter";
 
 function App() {
   const name = "Sidhish";
   return (
     <div className="App">
-      <Greet studentName={name} college={"Lpu"} branch={"CSE"} />
+      <Counter />
     </div>
   );
 }
 
 export default App;
-
