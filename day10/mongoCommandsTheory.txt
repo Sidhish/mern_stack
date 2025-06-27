@@ -1,0 +1,47 @@
+1. mongosh : that takes you inside the data base - test
+2.show dbs : lists you all the databases that has created
+3.db : show the current data base
+4.use database_name : uses the database_name as the data base if existed then it will switch to it
+and if not there then creates a database_name and swithces to it 
+db.version() : shows the version 
+db.dropDatabase() : delete the  database completely
+show collections : shows the collections in the database 
+db.createCollection("collection_Name") : creates a new collection in the data base
+db.collection_Name.insertOne({"name":"Sidhish","experience":6})
+insert single data in the collection
+db.mentors.insertMany([{"name":"sidhu","experience":5},{"name":"jagga","experience":6}])
+inserts multiple data in the collection in the form of array
+db.mentors.find() : shows all the data in the collection
+db.mentors.findOne() : returns the first data in the collection 
+db.mentors.find({name:"sidhu"}) : returns the data in array
+db.mentors.findOne({name:"sidhu"}) : returns the data in object
+db.mentors.find({}).count() : shows the count of the collections 
+db.mentors.find({experience:{$gt: 5}}) :return the data whose experience is greater than 5
+db.mentors.find({experience:{$lt: 10}}) : returns the data whose exerience is less than 10
+db.mentors.find({name:{$in:["sidhish","sidhu"]}}) : returns the data whose names are sidhish and sidhu
+db.mentors.updateOne({_id: ObjectId("685e24cf0833668d1d748a60")} ,{$set:{experience: 6}}) : updates the data 
+db.mentors.updateMany({experience:{$gte:5}},{$set:{subject:["MERN","DSA"]}}) 
+colleges> db.mentors.find()
+[
+  {
+    _id: ObjectId('685e239e0833668d1d748a5f'),
+    name: 'sidhish',
+    experience: 6,
+    subject: [ 'MERN', 'DSA' ]
+  },
+  {
+    _id: ObjectId('685e24cf0833668d1d748a60'),
+    name: 'sidhu',
+    experience: 6,
+    subject: [ 'MERN', 'DSA' ]
+  },
+  {
+    _id: ObjectId('685e24cf0833668d1d748a61'),
+    name: 'jagga',
+    experience: 6,
+    subject: [ 'MERN', 'DSA' ]
+  }
+]
+
+
+db.mentors.updateOne({name:"sriram"},{$set:{experience: 3, subject:["Game Development"]}},{upsert: true})

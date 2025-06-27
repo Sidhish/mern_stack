@@ -1,0 +1,240 @@
+Microsoft Windows [Version 10.0.22631.5472]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\sidhi>mongosh
+Current Mongosh Log ID: 685e1e2d0833668d1d748a5e
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.3
+Using MongoDB:          8.0.10
+Using Mongosh:          2.5.3
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-06-26T14:42:54.377+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin   40.00 KiB
+config  60.00 KiB
+local   40.00 KiB
+test> db
+test
+test> use colleges
+switched to db colleges
+colleges> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+colleges> db.dropDatabase()
+{ ok: 1, dropped: 'colleges' }
+colleges> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+colleges> db
+colleges
+colleges> show collections
+
+colleges> db.createCollection("student")
+{ ok: 1 }
+colleges> show collections
+student
+colleges> db.createCollection("mentors")
+{ ok: 1 }
+colleges> show collections
+mentors
+student
+colleges> db.dropDatabase()
+{ ok: 1, dropped: 'colleges' }
+colleges> db
+colleges
+colleges> show collections
+
+colleges> use tests
+switched to db tests
+tests> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+tests> use colleges
+switched to db colleges
+colleges> db
+colleges
+colleges> show collections
+
+colleges> db.createCollection("student")
+{ ok: 1 }
+colleges> db.createCollection("mentor")
+{ ok: 1 }
+colleges> show collections
+mentor
+student
+colleges> show dbs
+admin      40.00 KiB
+colleges   16.00 KiB
+config    108.00 KiB
+local      40.00 KiB
+colleges> db.mentors.insertOne({"name":"sidhish","experience":6})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685e239e0833668d1d748a5f')
+}
+colleges> show collections
+mentor
+mentors
+student
+colleges> db.mentors.insertMany([{"name":"sidhu","experience":5},{"name":"jagga","experience":6}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685e24cf0833668d1d748a60'),
+    '1': ObjectId('685e24cf0833668d1d748a61')
+  }
+}
+colleges> db.mentors.find()
+[
+  {
+    _id: ObjectId('685e239e0833668d1d748a5f'),
+    name: 'sidhish',
+    experience: 6
+  },
+  {
+    _id: ObjectId('685e24cf0833668d1d748a60'),
+    name: 'sidhu',
+    experience: 5
+  },
+  {
+    _id: ObjectId('685e24cf0833668d1d748a61'),
+    name: 'jagga',
+    experience: 6
+  }
+]
+colleges> db.mentors.findOne()
+{
+  _id: ObjectId('685e239e0833668d1d748a5f'),
+  name: 'sidhish',
+  experience: 6
+}
+colleges> db.mentors.find({name:"sidhu"})
+[
+  {
+    _id: ObjectId('685e24cf0833668d1d748a60'),
+    name: 'sidhu',
+    experience: 5
+  }
+]
+colleges> db.mentors.findOne({name:"sidhu"})
+{
+  _id: ObjectId('685e24cf0833668d1d748a60'),
+  name: 'sidhu',
+  experience: 5
+}
+colleges> db.mentors.find({experience:6 , name:"sidhu"})
+
+colleges> db.mentors.findOne({experience:6 , name:"sidhu"})
+null
+colleges> db.mentors.find({}).count()
+3
+colleges> db.mentors.findOne({}).count()
+TypeError: db.mentors.findOne({}).count is not a function
+colleges> db.mentors.find({experience:{$gt: 5}})
+[
+  {
+    _id: ObjectId('685e239e0833668d1d748a5f'),
+    name: 'sidhish',
+    experience: 6
+  },
+  {
+    _id: ObjectId('685e24cf0833668d1d748a61'),
+    name: 'jagga',
+    experience: 6
+  }
+]
+colleges> db.mentors.find({experience:{$lt: 10}})
+[
+  {
+    _id: ObjectId('685e239e0833668d1d748a5f'),
+    name: 'sidhish',
+    experience: 6
+  },
+  {
+    _id: ObjectId('685e24cf0833668d1d748a60'),
+    name: 'sidhu',
+    experience: 5
+  },
+  {
+    _id: ObjectId('685e24cf0833668d1d748a61'),
+    name: 'jagga',
+    experience: 6
+  }
+]
+colleges> db.mentors.find({name:{$in:["sidhish","sidhu"]}})
+[
+  {
+    _id: ObjectId('685e239e0833668d1d748a5f'),
+    name: 'sidhish',
+    experience: 6
+  },
+  {
+    _id: ObjectId('685e24cf0833668d1d748a60'),
+    name: 'sidhu',
+    experience: 5
+  }
+]
+colleges> db.mentors.updateOne({_id: ObjectId("685e24cf0833668d1d748a60")} ,{$set:{experience: 6}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+colleges> db.mentors.updateMany({experience:{$gte:5}},{$set:{subject:["MERN","DSA"]}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+colleges> db.mentors.find()
+[
+  {
+    _id: ObjectId('685e239e0833668d1d748a5f'),
+    name: 'sidhish',
+    experience: 6,
+    subject: [ 'MERN', 'DSA' ]
+  },
+  {
+    _id: ObjectId('685e24cf0833668d1d748a60'),
+    name: 'sidhu',
+    experience: 6,
+    subject: [ 'MERN', 'DSA' ]
+  },
+  {
+    _id: ObjectId('685e24cf0833668d1d748a61'),
+    name: 'jagga',
+    experience: 6,
+    subject: [ 'MERN', 'DSA' ]
+  }
+]
+colleges> db.mentors.find({name:"sriram"},{})
+
+colleges> db.mentors.find({name:"sriram"},{$set:{experience: 3, subject:["Game Development"]}}),{upset: true}
+{ upset: true }
+colleges> db.mentors.updateOne({name:"sriram"},{$set:{experience: 3, subject:["Game Development"]}}),{upset: true}
+{ upset: true }
+colleges> db.mentors.updateOne({name:"sriram"},{})
+MongoInvalidArgumentError: Update document requires atomic operators
+colleges> db.mentors.updateOne({name:"sriram"},{$set:{experience: 3, subject:["Game Development"]}}),{upset: true}
+{ upset: true }
+colleges> db.mentors.updateOne({name:"sriram"},{$set:{experience: 3, subject:["Game Development"]}},{upsert: true})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685e38543f70cb353da4d93a'),
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 1
+}
+colleges>
